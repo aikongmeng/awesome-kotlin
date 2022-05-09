@@ -1,28 +1,24 @@
 package link.kotlin.scripts
 
-import link.kotlin.scripts.ArticleFeature.highlightjs
-import link.kotlin.scripts.ArticleFeature.mathjax
-import link.kotlin.scripts.LanguageCodes.EN
-import link.kotlin.scripts.LinkType.article
-import java.nio.file.Files
-import java.nio.file.Paths
-import java.nio.file.StandardOpenOption.CREATE
-import java.nio.file.StandardOpenOption.TRUNCATE_EXISTING
+import link.kotlin.scripts.dsl.Article
+import link.kotlin.scripts.dsl.ArticleFeature
+import link.kotlin.scripts.dsl.ArticleFeature.highlightjs
+import link.kotlin.scripts.dsl.ArticleFeature.mathjax
+import link.kotlin.scripts.dsl.LinkType.article
+import link.kotlin.scripts.dsl.LanguageCodes.EN
+import link.kotlin.scripts.utils.writeFile
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 interface PagesGenerator {
-    fun generate(articles: List<Article>)
+    fun generate(articles: List<Article>, dist: String)
+
+    companion object
 }
 
-private fun getGroupLinks(group: List<Article>): String {
-    return group
-        .map { """<li><a href="./${it.filename}">${it.title}</a></li>""" }
-        .joinToString(separator = "\n")
-}
-class DefaultPageGenerator : PagesGenerator {
-    override fun generate(articles: List<Article>) {
+private class DefaultPagesGenerator : PagesGenerator {
+    override fun generate(articles: List<Article>, dist: String) {
         val articleBody = articles
             .groupBy { formatDate(it.date) }
             .map { """<div>${it.key}</div><ul>${getGroupLinks(it.value)}</ul>""" }
@@ -42,15 +38,15 @@ class DefaultPageGenerator : PagesGenerator {
             description = articleBody
         )
 
-        (articles + article)
-            .forEach {
-                Files.write(
-                    Paths.get("./dist/articles/${it.filename}"),
-                    getHtml(it).toByteArray(),
-                    CREATE,
-                    TRUNCATE_EXISTING
-                )
-            }
+        (articles + article).forEach {
+            writeFile("$dist/articles/${it.filename}", getHtml(it))
+        }
+    }
+}
+
+private fun getGroupLinks(group: List<Article>): String {
+    return group.joinToString(separator = "\n") {
+        """<li><a href="./${it.filename}">${it.title}</a></li>"""
     }
 }
 
@@ -90,6 +86,7 @@ private fun getHtml(article: Article): String {
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="${article.url}"/>
     <link rel="alternate" type="application/rss+xml" title="Kotlin.Link - 20 latest" href="/rss.xml"/>
     <link rel="alternate" type="application/rss+xml" title="Kotlin.Link - full archive" href="/rss-full.xml"/>
     <link href="/styles.css" rel="stylesheet">
@@ -118,51 +115,13 @@ private fun getHtml(article: Article): String {
         </main>
     </div>
 </div>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function () {
-            try {
-                w.yaCounter35722810 = new Ya.Metrika({
-                    id: 35722810,
-                    webvisor: true,
-                    clickmap: true,
-                    trackLinks: true,
-                    accurateTrackBounce: true
-                });
-            } catch (e) {
-            }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () {
-                n.parentNode.insertBefore(s, n);
-            };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else {
-            f();
-        }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript>
-    <div><img src="//mc.yandex.ru/watch/35722810" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
-
 </body>
 </html>
 """
 }
 
 fun getFeatures(features: List<ArticleFeature>): String {
-    return features.map {
+    return features.joinToString(separator = "\n") {
         when (it) {
             mathjax -> """<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>"""
             highlightjs -> """
@@ -170,7 +129,10 @@ fun getFeatures(features: List<ArticleFeature>): String {
                 <script src="/highlight.pack.js"></script>
                 <script>hljs.initHighlightingOnLoad();</script>
                 """
-            else -> """<script type="application/javascript">console.error("Unknown feature: $it")</script>"""
         }
-    }.joinToString(separator = "\n")
+    }
+}
+
+fun PagesGenerator.Companion.default(): PagesGenerator {
+    return DefaultPagesGenerator()
 }

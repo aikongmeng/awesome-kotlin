@@ -1,9 +1,11 @@
-node_modules
-npm-debug.log
-dist
-app/LinksWithStars.json
+# Generated
+/readme/README.md
 
-# Kotlin/Gradle/Idea
+# Intellij Idea
 .idea
+out
+*.iml
+
+# Gradle
 .gradle
 build

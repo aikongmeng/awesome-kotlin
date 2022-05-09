@@ -1,86 +1,56 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.gradle.api.Project
-import org.gradle.api.plugins.ApplicationPluginConvention
-import org.gradle.api.tasks.JavaExec
-import org.gradle.api.tasks.wrapper.Wrapper
-import org.gradle.script.lang.kotlin.compile
-import org.gradle.script.lang.kotlin.configure
-import org.gradle.script.lang.kotlin.dependencies
-import org.gradle.script.lang.kotlin.repositories
-import org.gradle.script.lang.kotlin.task
-import org.gradle.script.lang.kotlin.testCompile
-import org.jetbrains.kotlin.gradle.dsl.Coroutines
-import org.jetbrains.kotlin.gradle.dsl.KotlinProjectExtension
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-buildscript {
-    repositories {
-        jcenter()
-        maven {
-            setUrl("https://dl.bintray.com/kotlin/kotlin-eap-1.1/")
-        }
-    }
-
-    dependencies {
-        classpath("com.github.jengelman.gradle.plugins:shadow:1.2.4")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.3-eap-34")
-    }
+plugins {
+    application
+    alias(libs.plugins.kt.jvm)
 }
 
-apply {
-    plugin("kotlin")
-    plugin("application")
-    plugin("com.github.johnrengelman.shadow")
-}
-
-configure<ApplicationPluginConvention> {
-    mainClassName = "link.kotlin.scripts.Application"
-}
-
-configure<JavaExec>("run") {
-    args(System.getProperty("travis", "false"))
-}
-
-configure<ShadowJar>("shadowJar") {
-    mergeServiceFiles()
+application {
+    mainClass.set("link.kotlin.scripts.Application")
 }
 
 repositories {
-    jcenter()
-    maven { setUrl("https://dl.bintray.com/kotlin/kotlin-eap-1.1/") }
-    maven { setUrl("https://dl.bintray.com/heapy/heap") }
+    mavenCentral()
+    maven { url = uri("https://repo.kotlin.link") }
 }
 
-configure<KotlinProjectExtension> {
-    experimental.coroutines = Coroutines.ENABLE
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
+}
+
+tasks.withType<KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.3-eap-34")
-    compile("org.jetbrains.kotlin:kotlin-reflect:1.1.3-eap-34")
-    compile("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:0.14.1")
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.coroutines)
 
-    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.8")
-    compile("org.slf4j:slf4j-simple:1.7.25")
+    implementation(libs.jackson.module.kotlin)
+    implementation(libs.jackson.datatype.jsr310)
+    implementation(libs.jackson.dataformat.xml)
 
-    compile("com.rometools:rome:1.7.0")
-    compile("com.github.dfabulich:sitemapgen4j:1.0.6")
-    compile("org.jsoup:jsoup:1.10.2")
-    compile("by.heap.remark:remark-kotlin:1.2.0")
+    implementation(libs.slf4j.api)
+    implementation(libs.logback)
 
-    compile("org.jetbrains.kotlin:kotlin-script-util:1.1.3-eap-34")
-    compile("com.atlassian.commonmark:commonmark:0.9.0")
-    compile("com.atlassian.commonmark:commonmark-ext-gfm-tables:0.9.0")
+    implementation(libs.rome)
+    implementation(libs.sitemapgen4j)
+    implementation(libs.jsoup)
 
-    compile("com.squareup.okhttp3:okhttp:3.5.0")
+    implementation(libs.kotlin.scripting.common)
+    implementation(libs.kotlin.scripting.jvm)
+    implementation(libs.kotlin.scripting.jvm.host)
 
-    testCompile("junit:junit:4.12")
-}
+    implementation(libs.commonmark)
+    implementation(libs.commonmark.ext.gfm.tables)
 
-task(name = "wrapper", type = Wrapper::class) {
-    gradleVersion = "3.5"
-    distributionUrl = "http://services.gradle.org/distributions/gradle-$gradleVersion-bin.zip"
-}
+    implementation(libs.ktor.client.apache)
+    implementation(libs.ktor.client.jackson)
 
-inline fun <reified C> Project.configure(name: String, configuration: C.() -> Unit) {
-    (this.tasks.getByName(name) as C).configuration()
+    testImplementation(libs.mockk)
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
 }

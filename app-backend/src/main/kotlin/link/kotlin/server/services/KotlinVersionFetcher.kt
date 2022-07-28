@@ -1,11 +1,11 @@
-package link.kotlin.scripts
+package link.kotlin.server.services
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
 import com.fasterxml.jackson.module.kotlin.kotlinModule
-import link.kotlin.scripts.utils.HttpClient
-import link.kotlin.scripts.utils.body
-import org.apache.http.client.methods.HttpGet
+import io.ktor.client.HttpClient
+import io.ktor.client.request.get
+import io.ktor.client.statement.bodyAsText
 
 /**
  * Fetch latest kotlin versions from maven central.
@@ -14,20 +14,21 @@ import org.apache.http.client.methods.HttpGet
  */
 interface KotlinVersionFetcher {
     suspend fun getLatestVersions(branches: List<String>): List<String>
-
-    companion object
 }
 
 private class MavenCentralKotlinVersionFetcher(
-    private val httpClient: HttpClient
+    private val httpClient: HttpClient,
 ) : KotlinVersionFetcher {
-    override suspend fun getLatestVersions(branches: List<String>): List<String> {
+    override suspend fun getLatestVersions(
+        branches: List<String>,
+    ): List<String> {
         val url = "https://repo1.maven.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/maven-metadata.xml"
 
-        val xml = httpClient.execute(HttpGet(url)).body()
+        val xml = httpClient.get(url).bodyAsText()
 
-        val mapper = XmlMapper()
-        mapper.registerModule(kotlinModule {})
+        val mapper = XmlMapper().also {
+            it.registerModule(kotlinModule { })
+        }
 
         val metadata = mapper.readValue(xml, MavenMetadata::class.java)
         val versions = metadata.versioning.versions
@@ -38,18 +39,11 @@ private class MavenCentralKotlinVersionFetcher(
     private fun findMax(versions: List<String>, version: String): String {
         return versions
             .filter { it.matches(versionRegex) }
-            .filter { it.startsWith(version) }.maxOrNull() ?: ""
+            .filter { it.startsWith(version) }
+            .maxOrNull() ?: ""
     }
 
-    private val versionRegex = Regex("^[0-9]+.[0-9]+.[0-9]+$")
-}
-
-fun KotlinVersionFetcher.Companion.default(
-    httpClient: HttpClient
-): KotlinVersionFetcher {
-    return MavenCentralKotlinVersionFetcher(
-        httpClient = httpClient
-    )
+    private val versionRegex = Regex("^\\d+.\\d+.\\d+$")
 }
 
 @JsonIgnoreProperties("groupId", "artifactId")

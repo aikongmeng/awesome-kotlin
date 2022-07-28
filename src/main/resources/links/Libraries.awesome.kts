@@ -387,6 +387,11 @@ category("Libraries/Frameworks") {
       setPlatforms(JVM)
       setTags("scraper", "parser", "webcrawler", "chefkoch", "api")
     }
+    link {
+      github = "HelloCuriosity/model-forge"
+      desc = "A Kotlin library for auto generating models for tests."
+      setTags("test", "model-generation", "fixtures")
+    }
   }
   subcategory("Mocks and Fakes") {
     link {
@@ -682,6 +687,19 @@ category("Libraries/Frameworks") {
       setPlatforms(JVM)
       setTags("validation", "validator")
     }
+    link {
+      github = "konform-kt/konform"
+      desc = "Multiplatform validations for Kotlin data classes"
+      setPlatforms(JVM, JS)
+      setTags("validation", "dsl")
+    }
+
+    link {
+      github = "LeoColman/SimpleCpfValidator"
+      desc = "Simple Brazilian taxpayer document (CPF) validator"
+      setPlatforms(JVM)
+      setTags("validation", "validator", "cpf", "brazil")
+    }
   }
   subcategory("Database") {
     link {
@@ -857,7 +875,7 @@ category("Libraries/Frameworks") {
       awesome()
     }
     link {
-      github = "cqfn/diktat"
+      github = "saveourtool/diktat"
       desc = "Strict coding standard for Kotlin and a custom set of rules for detecting and autofixing code smells."
       setTags("style", "linter", "static-analysis", "check style", "code smell")
       setPlatforms(COMMON)
@@ -914,6 +932,12 @@ category("Libraries/Frameworks") {
       github = "krzema12/github-actions-kotlin-dsl"
       desc = "Authoring GitHub Actions workflows in Kotlin."
       setTags("github", "dsl", "scripting")
+      setPlatforms(JVM)
+    }
+    link {
+      github = "L-Briand/TT"
+      desc = "A powerful key:value template processor."
+      setTags("template", "template-engine")
       setPlatforms(JVM)
     }
   }
@@ -995,6 +1019,12 @@ category("Libraries/Frameworks") {
       setPlatforms(JVM)
       setTags("networking", "reliable transport", "reliable udp", "no-arq", "fec")
     }
+    link {
+      github = "open-coap/kotlin-mbedtls"
+      desc = "Integration with mbedtls library to provide DTLS client and server in jvm"
+      setPlatforms(JVM)
+      setTags("networking", "udp", "dtls", "tls")
+    }   
   }
   subcategory("Editors") {
     link {
@@ -1202,6 +1232,11 @@ category("Libraries/Frameworks") {
       setTags("logging", "slf4j")
     }
     link {
+      github = "InsanusMokrassar/KSLog"
+      desc = "Fully customizable and lightweight logging library for Kotlin"
+      setTags("logging")
+    }
+    link {
       github = "cesarferreira/kotlin-pluralizer"
       desc = "Kotlin extension to pluralize and singularize strings."
       setTags("pluralize", "singularizen")
@@ -1383,6 +1418,11 @@ category("Libraries/Frameworks") {
       desc = "Mathematical expression engine written in Kotlin, running on JVM."
     }
     link {
+      github = "vendelieu/telegram-bot"
+      desc = "A lightweight, feature-rich wrapper for the Telegram Bot API"
+      setTags("telegram", "bot", "Kotlin")
+    }
+    link {
       github = "kotlin-telegram-bot/kotlin-telegram-bot"
       desc = "A wrapper for the Telegram Bot API written in Kotlin."
     }
@@ -1461,6 +1501,12 @@ category("Libraries/Frameworks") {
       setTags("multiplatform", "semver", "semantic", "version")
       setPlatforms(ANDROID, COMMON, IOS, JS, JVM, NATIVE, WASM)
     }
+    link {
+      github = "krud-dev/shapeshift"
+      desc = "A Kotlin library for intelligent object mapping and conversion between objects."
+      setTags("object-mapping", "utility", "conversion", "spring")
+      setPlatforms(JVM, ANDROID)
+    }
   }
   subcategory("Parsers") {
     link {
@@ -1532,6 +1578,13 @@ category("Libraries/Frameworks") {
       desc = "Multiplatform kotlin library for calculating text differences. Based on java-diff-utils."
       setTags("multiplatform", "tools", "text", "diff", "myers", "algorithm")
       setPlatforms(COMMON, JVM, JS, NATIVE)
+    }
+  }
+  subcategory("DSL") {
+    link {
+      github = "h0tk3y/regex-dsl"
+      desc = "A Kotlin DSL for regular expressions"
+      setPlatforms(JVM)
     }
   }
   subcategory("Extensions") {

@@ -9,6 +9,13 @@ category("Libraries/Frameworks") {
       awesome()
     }
     link {
+      github = "Flaxoos/flax-ktor-plugins"
+      href = "https://github.com/Flaxoos/flax-ktor-plugins"
+      desc = "A Ktor plugins repository for servers and clients, including a kafka client plugin, circuit breaker and more"
+      setPlatforms(JVM, ANDROID, NATIVE, IOS)
+      setTags("web", "mobile", "ktor", "plugins", "server", "client", "kafka", "rate-limiting", "circuit-breaker")
+    }
+    link {
       github = "darkredz/zeko-restapi-framework"
       setTags("web", "http", "rest", "vert.x", "swagger", "openapi", "microframework", "rest-api", "reactive", "mvc")
     }
@@ -38,6 +45,12 @@ category("Libraries/Frameworks") {
       github = "Kotlin/kotlinx.html"
       desc = "Kotlin DSL for HTML."
       setTags("web", "html")
+      awesome()
+    }
+    link {
+      github = "allangomes/kotlinwind.css"
+      desc = "Kotlin DSL for CSS based on Tailwind."
+      setTags("web", "html", "tailwind", "css")
       awesome()
     }
     link {
@@ -204,6 +217,23 @@ category("Libraries/Frameworks") {
       setPlatforms(JS)
       setTags("web", "framework", "fullstack")
     }
+    link {
+      github = "Ahoo-Wang/CoSec"
+      desc = "RBAC-based And Policy-based Multi-Tenant Security Framework."
+      setTags("kotlin", "security", "rbac", "policy", "multi-tenant", "jwt", "reactive", "web-flux", "spring-boot", "spring-cloud-gateway")
+    }
+    link {
+      github = "nacular/doodle"
+      href = "https://nacular.github.io/doodle/"
+      desc = "A pure Kotlin UI framework for the Web (and Desktop)"
+      setTags("web", "javascript", "kotlin-js", "framework", "desktop")
+      setPlatforms(COMMON, JVM, JS)
+    }
+    link {
+      github = "Ahoo-Wang/Wow"
+      desc = "A Modern Reactive CQRS Architecture Microservice development framework based on DDD and EventSourcing."
+      setTags("kotlin", "ddd", "cqrs", "eventsourcing", "eda", "microservice", "reactive", "mongodb", "r2dbc", "kafka", "test-driven", "opentelemetry", "webflux", "spring-boot")
+    }
   }
   subcategory("Testing") {
     link {
@@ -273,6 +303,11 @@ category("Libraries/Frameworks") {
       desc = "Pure Kotlin mocking library."
       setTags("test", "mock")
       awesome()
+    }
+    link {
+      github = "Ninja-Squad/springmockk"
+      desc = "SpringMockK: MockBean and SpyBean, but for MockK instead of Mockito"
+      setTags("spring", "mock")
     }
     link {
       github = "mvysny/DynaTest"
@@ -391,6 +426,23 @@ category("Libraries/Frameworks") {
       github = "HelloCuriosity/model-forge"
       desc = "A Kotlin library for auto generating models for tests."
       setTags("test", "model-generation", "fixtures")
+    }
+    link {
+      github = "Trendyol/stove"
+      desc = "The easiest way of writing e2e tests for your JVM back-end API with Kotlin"
+      setTags("test", "e2e-testing", "testing-framework", "docker", "ktor", "spring", "test-automation")
+    }
+    link {
+      github = "Kotlin/kotlinx-benchmark"
+      desc = "A powerful library for benchmarking in Kotlin."
+      setTags("benchmark", "performance", "multiplatform")
+      setPlatforms(JVM, JS, NATIVE)
+    }
+    link {
+      github = "diffplug/selfie"
+      href = "https://selfie.dev/jvm"
+      desc = "Snapshot testing (inline, on disk, and memoization)"
+      setTags("test", "snapshot", "multiplatform")
     }
   }
   subcategory("Mocks and Fakes") {
@@ -693,12 +745,17 @@ category("Libraries/Frameworks") {
       setPlatforms(JVM, JS)
       setTags("validation", "dsl")
     }
-
     link {
       github = "LeoColman/SimpleCpfValidator"
       desc = "Simple Brazilian taxpayer document (CPF) validator"
       setPlatforms(JVM)
       setTags("validation", "validator", "cpf", "brazil")
+    }
+    link {
+      github = "kciter/thing"
+      desc = "A rule-based entity management library written in Kotlin"
+      setPlatforms(JVM)
+      setTags("validation", "validator", "spring", "entity")
     }
   }
   subcategory("Database") {
@@ -713,6 +770,12 @@ category("Libraries/Frameworks") {
       desc = "Transactional schema-less embedded database used by JetBrains YouTrack and JetBrains Hub."
       setTags("embedded-database", "java", "kotlin", "key-value", "entity-store", "transactional", "log-structured", "schema-less", "snapshot-isolation", "nosql", "xodus", "db", "database", "youtrack")
       setPlatforms(JVM)
+      awesome()
+    }
+    link {
+      github = "mongodb/mongo-java-driver"
+      desc = "The official MongoDB Kotlin Driver allows developers to build server-side Kotlin applications with MongoDB."
+      setTags("database", "java", "kotlin", "mongodb", "query", "nosql", "db")
       awesome()
     }
     link {
@@ -838,6 +901,28 @@ category("Libraries/Frameworks") {
       setTags("spring", "spring-data", "requery", "java", "kotlin", "kotlin-coroutines", "orm", "jpa")
       setPlatforms(JVM)
     }
+    link {
+      github = "ctripcorp/SQLlin"
+      desc = "A DSL SQLite library for Kotlin Multiplatform"
+      setTags("multiplatform", "android", "native", "sql", "sqlite", "database", "orm", "dsl", "ksp")
+      setPlatforms(COMMON, ANDROID, IOS, NATIVE)
+    }
+    link {
+      github = "komapper/komapper"
+      desc = "Komapper is an ORM library for server-side Kotlin with JDBC and R2DBC support."
+      setTags("database", "orm", "query", "sql", "jdbc", "r2dbc")
+    }
+    link {
+      github = "objectbox/objectbox-java"
+      desc = "Embedded on-device object database for Mobile Apps and IoT."
+      setTags("android", "database", "nosql")
+    }
+    link {
+      github = "smyrgeorge/sqlx4k"
+      desc = "A small non-blocking database driver written in Kotlin for the Native platform."
+      setTags("database", "SQL", "driver", "query", "postgres", "postgresql", "mysql", "async", "async-io", "non-blocking")
+      setPlatforms(NATIVE)
+    }
   }
   subcategory("Tools") {
     link {
@@ -872,6 +957,13 @@ category("Libraries/Frameworks") {
       github = "pinterest/ktlint"
       desc = "An anti-bikeshedding Kotlin linter with built-in formatter."
       setTags("style", "linter")
+      awesome()
+    }
+    link {
+      name = "Kotlin Notebook"
+      desc = "Kotlin notebooks are interactive worksheets with rich outputs."
+      href = "https://plugins.jetbrains.com/plugin/16340-kotlin-notebook"
+      setTags("scripting", "kts")
       awesome()
     }
     link {
@@ -929,8 +1021,8 @@ category("Libraries/Frameworks") {
       setPlatforms(JVM)
     }
     link {
-      github = "krzema12/github-actions-kotlin-dsl"
-      desc = "Authoring GitHub Actions workflows in Kotlin."
+      github = "typesafegithub/github-workflows-kt"
+      desc = "Authoring GitHub Actions workflows in Kotlin. You won't go back to YAML!"
       setTags("github", "dsl", "scripting")
       setPlatforms(JVM)
     }
@@ -1011,6 +1103,12 @@ category("Libraries/Frameworks") {
       desc = "Kotlin library to handle offline mode easily with OkHttp."
       setTags("http", "http client", "offline", "okhttp")
     }
+    link {
+      github = "corbella83/kotliny.network"
+      desc = "Simple, powerful and lightweight Kotlin Multiplatform Network Client"
+      setTags("http", "http client", "multiplatform")
+      setPlatforms(ANDROID, COMMON, IOS, JVM, NATIVE)
+    }
   }
   subcategory("Networking") {
     link {
@@ -1024,7 +1122,7 @@ category("Libraries/Frameworks") {
       desc = "Integration with mbedtls library to provide DTLS client and server in jvm"
       setPlatforms(JVM)
       setTags("networking", "udp", "dtls", "tls")
-    }   
+    }
   }
   subcategory("Editors") {
     link {
@@ -1078,33 +1176,33 @@ category("Libraries/Frameworks") {
     link {
       github = "jneen/rouge"
       desc = "A pure-ruby code highlighter that is compatible with pygments. (wip)"
-      setTags("syntax", "higlight")
+      setTags("syntax", "highlight")
     }
     link {
       github = "isagalaev/highlight.js"
       desc = "Javascript syntax highlighter. (out-of-date)"
-      setTags("syntax", "higlight")
+      setTags("syntax", "highlight")
     }
     link {
       github = "github/linguist"
       desc = "For Ruby/Github, uses Sublime package"
-      setTags("syntax", "higlight")
+      setTags("syntax", "highlight")
     }
     link {
       bitbucket = "birkenfeld/pygments-main"
       desc = "Python syntax highlighter."
-      setTags("syntax", "higlight")
+      setTags("syntax", "highlight")
     }
     link {
       github = "cansik/kotlin-latex-listing"
       desc = "A syntax highlighting template for the Kotlin language in LaTeX listings."
-      setTags("syntax", "higlight")
+      setTags("syntax", "highlight")
     }
   }
   subcategory("Game Development") {
     link {
       github = "zeganstyl/thelema-engine"
-      desc = "3d graphics engine in Kotlin, based on sources of libGDX. Platforms: JVM, TeaVM, Koltin/JS, Kotlin/Native. See live demo: [TeaVM](https://zeganstyl.github.io/thelema-teavm-tests/), [Kotlin/JS](https://zeganstyl.github.io/thelema-kxjs-demo/)"
+      desc = "3d graphics engine in Kotlin, based on sources of libGDX. Platforms: JVM, TeaVM, Kotlin/JS, Kotlin/Native. See live demo: [TeaVM](https://zeganstyl.github.io/thelema-teavm-tests/), [Kotlin/JS](https://zeganstyl.github.io/thelema-kxjs-demo/)"
       setTags("thelema-engine", "game dev", "games", "desktop", "webgl")
     }
     link {
@@ -1141,6 +1239,11 @@ category("Libraries/Frameworks") {
       github = "KogeLabs/Ockero"
       desc = "Ockero: Kotlin OpenGl Game Engine"
       setPlatforms(JVM)
+    }
+    link {
+      github = "littlektframework/littlekt"
+      desc = "A Kotlin multiplatform 2D game development framework based on OpenGL that is inspired by libGDX and KorGE. Current platforms: JVM, Web, and Android."
+      setTags("multiplatform", "desktop", "webgl", "android", "games", "game-dev")
     }
   }
   subcategory("Misc") {
@@ -1211,6 +1314,11 @@ category("Libraries/Frameworks") {
       github = "yole/kxdate"
       desc = "Kotlin extensions for Java 8 java.time API"
       setTags("time", "date")
+    }
+    link {
+      github = "seljabali/java-time-fun"
+      desc = "java.time Kotlin extension functions library."
+      setTags("time", "date", "conversion")
     }
     link {
       github = "ingokegel/jclasslib"
@@ -1313,6 +1421,12 @@ category("Libraries/Frameworks") {
       github = "kunalsheth/units-of-measure"
       desc = "A type-safe dimensional analysis library for Kotlin."
       setTags("dimensional-analysis", "typesafety", "metaprogramming")
+    }
+    link {
+      github = "vsirotin/si-units"
+      name = "KotUniL"
+      desc = "KotUniL: Kotlin function and objects for working with SI units like meter, second, as well as currencies and general units like percent."
+      setTags("si-units", "dimensional-analysis", "typesafety", "physics", "multiplatform", "js")
     }
     link {
       github = "spoptchev/kotlin-preconditions"
@@ -1418,6 +1532,16 @@ category("Libraries/Frameworks") {
       desc = "Mathematical expression engine written in Kotlin, running on JVM."
     }
     link {
+      github = "eriksencosta/math-common"
+      desc = "Mathematical conventions to reduce boilerplate code"
+      setTags("math", "rounding", "exponentiation")
+    }
+    link {
+      github = "eriksencosta/math-percentage"
+      desc = "Percentage calculations made easy"
+      setTags("math", "percentage")
+    }
+    link {
       github = "vendelieu/telegram-bot"
       desc = "A lightweight, feature-rich wrapper for the Telegram Bot API"
       setTags("telegram", "bot", "Kotlin")
@@ -1507,8 +1631,61 @@ category("Libraries/Frameworks") {
       setTags("object-mapping", "utility", "conversion", "spring")
       setPlatforms(JVM, ANDROID)
     }
+    link {
+      github = "touchlab/KMMBridge"
+      desc = "KMMBridge is a set of Gradle tooling that facilitates publishing and consuming pre-built KMM (Kotlin Multiplatform Mobile) Xcode Framework binaries."
+      setTags("gradle", "multiplatform", "tooling")
+      setPlatforms(NATIVE, IOS, ANDROID)
+    }
+    link {
+      github = "Ahoo-Wang/CoCache"
+      desc = "Level 2 Distributed Coherence Cache Framework"
+      setTags("cache", "redis", "distributed", "coherence", "spring-boot")
+    }
+    link {
+      github = "kryptokrona/kryptokrona-kotlin-sdk"
+      desc = "Kryptokrona SDK in Kotlin for building decentralized private communication and payment systems."
+      setTags("blockchain", "cryptocurrency", "cryptography", "sdk", "crypto")
+    }
+    link {
+      github = "lpicanco/krate"
+      desc = "Krate is a rate limiter library designed specifically for Kotlin applications. In memory, Redis and Caffeine support."
+      href = "https://lpicanco.github.io/krate"
+      setTags("rate-limit", "token-bucket", "redis")
+      setPlatforms(JVM, ANDROID)
+    }
+    link {
+      github = "Ahoo-Wang/Simba"
+      desc = "Distributed lock service"
+      setTags("lock", "mutex", "distributed", "scheduler", "redis", "zookeeper", "jdbc", "spring-boot")
+    }
+    link {
+      github = "nsk90/kstatemachine"
+      desc = "KStateMachine is a Kotlin DSL library for creating state machines and statecharts."
+      setTags("state machine", "coroutines", "multiplatform", "dsl")
+      setPlatforms(JVM, ANDROID, IOS)
+    }
+    link {
+      github = "jillesvangurp/geogeometry"
+      desc = "GeoGeometry is a set of algorithms and functions for manipulating geo hashes and geometric shapes with geo coordinates"
+      setTags("gis", "geo-spatial","utm","mgrs","ups","geojson","alhorithms")
+      setPlatforms(JVM, JS, NATIVE, IOS)
+    }
+    link {
+      github = "jillesvangurp/querylight"
+      desc = "In memory search engine for simple in app search. Implements tf/idf and a some basic queries, tokenizers and analyzers."
+      setTags("search","tf/idf")
+      setPlatforms(COMMON, JVM, JS)
+    }
   }
   subcategory("Parsers") {
+    link {
+      github = "fleeksoft/ksoup"
+      desc = "Kotlin Multiplatform library for working with HTML and XML. It's a port of the renowned Java library Jsoup."
+      setPlatforms(JVM, ANDROID, IOS, NATIVE, JS, WASM)
+      setTags("html", "xml", "parser")
+      awesome()
+    }
     link {
       github = "ParserKt/ParserKt"
       setPlatforms(COMMON, JS, JVM)
@@ -1542,8 +1719,8 @@ category("Libraries/Frameworks") {
   }
   subcategory("Raspberry Pi") {
     link {
-      github = "mhashim6/Pi4K"
-      desc = "Pi4J Kotlin bindings."
+      github = "Pi4J/pi4j-kotlin"
+      desc = "Pi4J Kotlin DSL and API."
       setTags("raspberry-pi", "raspberrypi", "gpio", "dsl", "pi4j")
     }
   }
@@ -1569,15 +1746,64 @@ category("Libraries/Frameworks") {
       setPlatforms(COMMON, JVM, JS, NATIVE)
     }
     link {
+      github = "petertrr/kotlin-multiplatform-diff"
+      desc = "Multiplatform kotlin library for calculating text differences. Based on java-diff-utils."
+      setTags("multiplatform", "tools", "text", "diff", "myers", "algorithm")
+      setPlatforms(COMMON, JVM, JS, NATIVE)
+    }
+    link {
+      github = "nacular/measured"
+      desc = "Type-safe, intuitive units of measure"
+      setTags("multiplatform", "framework")
+      setPlatforms(COMMON, JVM, JS)
+    }
+    link {
+      github = "ctripcorp/mmkv-kotlin"
+      desc = "The Kotlin Multiplatform wrapper for MMKV"
+      setTags("multiplatform", "android", "native", "key-value", "store")
+      setPlatforms(COMMON, ANDROID, IOS, NATIVE)
+    }
+    link {
+      github = "Ashampoo/kim"
+      desc = "Kotlin Multiplatform library for reading and writing image metadata"
+      setTags("multiplatform", "metadata", "native", "jpg", "png", "tiff")
+      setPlatforms(COMMON, JVM, ANDROID, IOS, NATIVE)
+    }
+    link {
+      github = "Ashampoo/xmpcore"
+      desc = "Kotlin Multiplatform port of Adobe's XMP SDK"
+      setTags("multiplatform", "metadata", "native", "xmp")
+      setPlatforms(COMMON, JVM, ANDROID, IOS, NATIVE)
+    }
+    link {
+      github = "divyanshupundir/mavlink-kotlin"
+      desc = "A modern MAVLink library for Kotlin Multiplatform."
+      setTags("multiplatform", "mavlink", "drone", "uav", "px4", "ardupilot")
+      setPlatforms(COMMON, JVM, JS, ANDROID, IOS, NATIVE)
+    }
+    link {
+      github = "L-Briand/KTM"
+      desc = "Mustache templating in kotlin multiplatform"
+      setTags("multiplatform", "template", "template-engine", "mustache")
+      setPlatforms(COMMON, JVM, JS, ANDROID, IOS, NATIVE)
+    }
+    link {
+      github = "respawn-app/FlowMVI"
+      desc = "A Kotlin Multiplatform architectural framework based on coroutines with an extensive feature set, powerful plugin system and a rich DSL."
+      setTags("multiplatform", "arch", "architecture", "mvi")
+      setPlatforms(COMMON, JVM, JS, ANDROID, IOS, NATIVE, WASM)
+    }
+  }
+  subcategory("Cryptography") {
+    link {
       github = "ionspin/kotlin-multiplatform-libsodium"
       desc = "Kotlin multiplatform wrapper for Libsodium cryptographic library."
       setTags("multiplatform", "libsodium", "cryptography")
     }
     link {
-      github = "petertrr/kotlin-multiplatform-diff"
-      desc = "Multiplatform kotlin library for calculating text differences. Based on java-diff-utils."
-      setTags("multiplatform", "tools", "text", "diff", "myers", "algorithm")
-      setPlatforms(COMMON, JVM, JS, NATIVE)
+      github = "appmattus/crypto"
+      desc = "A collection of Kotlin Multiplatform Mobile cryptographic hashing functions."
+      setTags("multiplatform", "cryptography", "CRC", "Adler-32", "CityHash", "FarmHash", "HighwayHash", "MetroHash", "MurmurHash", "t1ha", "xxHash", "wyhash", "Blake", "HMAC", "Skein", "BMW", "cSHAKE", "CubeHash", "ECHO", "Fugue", "GOST", "Groestl", "Hamsi", "Haraka", "HAVAL", "JH", "Keccak", "Kupyna", "Luffa", "MessageDigest", "MD5", "PANAMA", "RadioGatun", "RIPEMD", "SHA", "Shabal", "SHAKE", "SIMD", "SM3", "Tiger", "Whirlpool")
     }
   }
   subcategory("DSL") {
@@ -1585,6 +1811,11 @@ category("Libraries/Frameworks") {
       github = "h0tk3y/regex-dsl"
       desc = "A Kotlin DSL for regular expressions"
       setPlatforms(JVM)
+    }
+    link {
+      github = "bipokot/Kabu"
+      desc = "The fastest way to create complex Kotlin DSL"
+      setTags("dsl", "kotlin", "codegenerator")
     }
   }
   subcategory("Extensions") {
@@ -1791,14 +2022,31 @@ category("Libraries/Frameworks") {
       awesome()
     }
     link {
-      github = "JetBrains/lets-plot-kotlin"
-      desc = "Grammar of graphics visualization for Kotlin"
+      github = "Kotlin/dataframe"
+      desc = "A Kotlin library for in-memory data manipulation"
+      href = "https://github.com/Kotlin/dataframe"
+      setTags("data science", "data analysis", "data wrangling", "csv", "json")
+      setPlatforms(JVM)
       awesome()
     }
     link {
-      github = "JetBrains/KotlinDL"
+      github = "Kotlin/kandy"
+      desc = "Kotlin plotting library"
+      href = "https://github.com/Kotlin/kandy"
+      setTags("data science", "data analysis", "plot")
+      awesome()
+    }
+    link {
+      github = "JetBrains/lets-plot-kotlin"
+      desc = "Grammar of graphics visualization for Kotlin"
+      href = "https://github.com/JetBrains/lets-plot-kotlin"
+      setTags("data science", "data analysis", "plot")
+      awesome()
+    }
+    link {
+      github = "Kotlin/KotlinDL"
       desc = "High-level Deep Learning Framework written in Kotlin and inspired by Keras."
-      href = "https://jetbrains.github.io/KotlinDL/"
+      href = "https://github.com/Kotlin/kotlindl"
       setTags("data science", "neural-networks", "deep-learning", "machine-learning", "artificial-intelligence")
       awesome()
     }
@@ -1806,18 +2054,6 @@ category("Libraries/Frameworks") {
       github = "Kotlin/kotlin-jupyter"
       desc = "Official Kotlin Jupyter kernel"
       setTags("data science", "juputer", "repl")
-      awesome()
-    }
-    link {
-      github = "thomasnield/kotlin-statistics"
-      desc = "Advanced math and statistical extensions for Kotlin."
-      setTags("data science", "extensions")
-      awesome()
-    }
-    link {
-      github = "holgerbrandl/krangl"
-      desc = "krangl is a {K}otlin library for data w{rangl}ing."
-      setTags("data science", "data wrangling")
       awesome()
     }
     link {
@@ -1829,7 +2065,7 @@ category("Libraries/Frameworks") {
       github = "mipt-npm/kmath"
       desc = "A (not so numpy-like) multiplatform mathematical library with higher level abstractions."
       awesome()
-    }    
+    }
     link {
       github = "unipu-ict/ksdtoolkit"
       desc = "Kotlin System Dynamics Toolkit - for system dynamics modelling and simulation with Kotlin."
@@ -1861,6 +2097,12 @@ category("Libraries/Frameworks") {
       setTags("data science", "artificial-intelligence", "mathematical-optimization", "constraint-solving")
     }
     link {
+      github = "timefoldai/timefold-solver"
+      desc = "AI solver to optimize scheduling of vehicle routes, employees, maintenance, jobs, etc."
+      href = "https://timefold.ai"
+      setTags("data science", "artificial-intelligence", "mathematical-optimization", "constraint-solving")
+    }
+    link {
       github = "holgerbrandl/kalasim"
       desc = "Discrete event simulator that enables complex, dynamic process models."
       href = "https://www.kalasim.org"
@@ -1879,15 +2121,9 @@ category("Libraries/Frameworks") {
     }
     link {
       github = "Kotlin/multik"
-      desc = "A Kotlin library for working with multi-demensional arrays"
-      setTags("multidimensional array")
-      setPlatforms(JVM)
-    }
-    link {
-      github = "Kotlin/dataframe"
-      desc = "A Kotlin library for in-memory data manipulation"
-      setTags("data wrangling", "csv")
-      setPlatforms(JVM)
+      desc = "A Kotlin library for working with multi-dimensional arrays"
+      setTags("data science", "math", "multidimensional array")
+      setPlatforms(COMMON, JVM, JS, NATIVE, WASM)
     }
     link {
       github = "breandan/kaliningraph"
@@ -1896,6 +2132,13 @@ category("Libraries/Frameworks") {
     link {
       github = "grinisrit/noa-atra"
       desc = "Analytics for Trading with NOA"
+    }
+    link {
+      github = "sigbla/sigbla-app"
+      desc = "Sigbla is a framework for working with data in tables, supporting various data types, reactive programming and events, user input, charts, and more"
+      href = "https://github.com/sigbla/sigbla-app"
+      setTags("data science", "data analysis", "data wrangling", "table", "plot")
+      setPlatforms(JVM)
     }
   }
   subcategory("Command Line Interface") {
@@ -1978,6 +2221,13 @@ category("Libraries/Frameworks") {
       setTags("rsocket", "rx", "reactive-streams")
     }
     link {
+      github = "lepicekmichal/SignalRKore"
+      href = "https://github.com/lepicekmichal/SignalRKore"
+      desc = "Kotlin multiplatform implementation of SignalR."
+      setPlatforms(ANDROID, IOS, JVM)
+      setTags("signalr", "websocket", "multiplatform", "signalrkore")
+    }
+    link {
       github = "Dynamium/EVCalc"
       desc = "EVCalc is a calculation engine for mobile electric venicles (Electric scooters, electric unicycles, and so on) written in Kotlin."
       setPlatforms(JVM)
@@ -1991,6 +2241,18 @@ category("Libraries/Frameworks") {
     }
   }
   subcategory("API Clients") {
+    link {
+      github = "jillesvangurp/kt-search"
+      desc = "Kotlin multiplatform library for Elasticsearch and Opensearch"
+      setPlatforms(COMMON, JS, JVM, NATIVE)
+      setTags("elasticsearch", "opensearch", "api-client","co-routines", "dsl")
+    }
+    link {
+      github = "formation-res/overpass-kotlin-client"
+      desc = "A simple client for overpass that uses ktor-client and kotlinx.serialization for parsing JSON responses."
+      setPlatforms(COMMON, JS, JVM)
+      setTags("overpass","api-client","openstreetmap","gis")
+    }
     link {
       github = "JetBrains/space-kotlin-sdk"
       desc = "Kotlin client for JetBrains Space HTTP API"
@@ -2007,6 +2269,21 @@ category("Libraries/Frameworks") {
       desc = "Multiplatform AWS SDK for Kotlin"
       setPlatforms(JVM, ANDROID)
     }
+    link {
+      github = "MoviebaseApp/tmdb-api"
+      desc = "Modern powerful TMDB API to fetch movies and TV shows for Kotlin Multiplatform."
+      setPlatforms(JVM, JS, ANDROID, NATIVE, COMMON)
+    }
+    link {
+      github = "MoviebaseApp/trakt-api"
+      desc = "Modern powerful Trakt API to track, discover and share your movies & TV shows."
+      setPlatforms(JVM, JS, ANDROID, NATIVE, COMMON)
+    }
+    link {
+      github = "InsanusMokrassar/ktgbotapi"
+      desc = "Strongly typed API wrapper for Telegram Bots API"
+      setPlatforms(JVM, JS, ANDROID, NATIVE, COMMON)
+    }
   }
   subcategory("Internationalisation and Localization") {
     link {
@@ -2021,6 +2298,12 @@ category("Libraries/Frameworks") {
       setTags("L10n")
       setPlatforms(JVM)
     }
+    link {
+      github = "formation-res/fluent-kotlin"
+      desc = "Kotlin multi platdform localization for js and jvm based on project fluent."
+      setTags("localization", "mozilla-fluent")
+      setPlatforms(JVM, JS)
+    }
   }
   subcategory("Logging") {
     link {
@@ -2034,6 +2317,12 @@ category("Libraries/Frameworks") {
       desc = "Method call logging for Kotlin Multiplatform"
       setPlatforms(JVM, JS, ANDROID, NATIVE, IOS, COMMON)
     }
+    link {
+      github = "InsanusMokrassar/KSLog"
+      desc = "Simple Kotlin Logging"
+      setPlatforms(ANDROID, NATIVE, COMMON, JVM, JS)
+      setTags("logging", "multiplatform")
+    }
   }
   subcategory("Mail") {
     link {
@@ -2046,11 +2335,11 @@ category("Libraries/Frameworks") {
   subcategory("Jetpack-Compose"){
     link{
       github = "CuriousNikhil/neumorphic-compose"
-      desc = "Neumorphism UI on Android with Jetpack Compose. Just add one modifer = Modifier.neumorphic()"
+      desc = "Neumorphism UI on Android with Jetpack Compose. Just add one modifier = Modifier.neumorphic()"
       setTags("jetpack-compose", "compose", "kotlin", "ui")
       setPlatforms(ANDROID)
     }
-    
+
     link{
       github = "CuriousNikhil/compose-particle-system"
       desc = "A lightweight particle system for Jetpack Compose - Quarks"
@@ -2068,6 +2357,12 @@ category("Libraries/Frameworks") {
       desc = "An android library to highlight different features of the app built using Jetpack Compose."
       setTags("jetpack-compose", "compose", "kotlin", "jetpack-android", "android")
       setPlatforms(ANDROID)
+    }
+    link{
+      github = "mahozad/wavy-slider"
+      desc = "Multiplatform UI widget that recreates the Android 13 squiggly progress bar"
+      setTags("jetpack-compose", "compose", "kotlin", "compose-desktop", "ui")
+      setPlatforms(JVM, ANDROID, JS)
     }
   }
 }

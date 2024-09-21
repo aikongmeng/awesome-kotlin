@@ -1,6 +1,11 @@
 category("Projects") {
   subcategory("Web") {
     link {
+      github = "jillesvangurp/rankquest-studio"
+      desc = "Rankquest Studio is a web based tool that you can use to benchmark search query metrics for your search APIs. Written in Kotlin & Fritz2"
+      setTags("search-ranking","application","kotlin-js","fritz2")
+    }
+    link {
       github = "sdeleuze/spring-boot-kotlin-demo"
       desc = "Basic Spring Boot app in Kotlin."
       setTags("spring", "spring-boot")
@@ -35,6 +40,11 @@ category("Projects") {
       desc = "This project shows how to do a web-based \"Hello World!\" with Kotlin in combination with various JVM -" +
         " based web frameworks."
       setTags("spark java", "vertx", "wasabi", "ktor", "akka", "example")
+    }
+    link {
+      github = "FirstArtaxer/karbitrage"
+      desc = "Kotlin-based project designed to extract cryptocurrency prices from various exchanges using the Ktor framework."
+      setTags("ktor", "cryptocurrency", "web", "exposed", "kotlin", "coroutines", "koin", "reflection")
     }
     link {
       github = "ivanpopelyshev/vertx-facebook-messenger"
@@ -80,6 +90,11 @@ category("Projects") {
       github = "MichaelGrigoryan25/kotlin-url-shortener"
       desc = "Basic URL shortener built with Kotlin, Redis and Javalin"
       setTags("javalin", "url-shortener", "redis", "web", "gradle", "kotlin")
+    }
+    link {
+      github = "Ahoo-Wang/CoSky"
+      desc = "High-performance, low-cost microservice governance platform. Service Discovery and Configuration Service"
+      setTags("microservice", "service-discovery", "configuration-service", "service-registry", "redis", "kotlin")
     }
   }
   subcategory("Build tools") {
@@ -228,6 +243,11 @@ category("Projects") {
       desc = "A Multiplatform GUI for Hashing, written in Compose for Desktop."
       setTags("hashing", "compose-for-desktop")
     }
+    link {
+      github = "krud-dev/ostara"
+      desc = "A desktop application that provides various features to monitor and interact with Spring Boot Applications via Actuator."
+      setTags("spring", "spring-boot", "spring-actuator")
+    }
   }
   subcategory("Examples") {
     link {
@@ -325,6 +345,12 @@ category("Projects") {
       setTags("examples", "kotlin-multiplatform", "testing", "stubbing-http", "Ktor", "ktor-client-mock")
     }
     link {
+      github = "TobseF/Candy-Crush-Clone"
+      desc = "A Kotlin Multiplatform match 3 sample game build to teach, made with KorGE."
+      setTags("examples", "kotlin-multiplatform", "KorGE", "game", "native", "tutorial")
+      setPlatforms(ANDROID, COMMON, IOS, JS, JVM, NATIVE)
+    }
+    link {
       github = "mrcsxsiq/Kotlin-Pokedex"
       desc = "A Pokedex demo app built with Kotlin using ViewModel, LiveData, Room and Navigation"
     }
@@ -336,6 +362,18 @@ category("Projects") {
       github = "rozkminiacz/KotlinUnitTesting"
       desc = "Kotlin Unit Testing Examples."
       setTags("unit-test", "junit4", "junit5", "kotlintest", "spek", "mockito", "mockk", "strikt")
+    }
+    link {
+      github="itmaginationdemos/KMM-Sample-App"
+      desc="A sample app written with the help of KMM (Kotlin Multiplatform). File System access, voice recording, and persistence."
+      setTags("example", "kmm", "compose")
+      setPlatforms(ANDROID, IOS)
+    }
+    link {
+      github="formation-res/kt-fullstack-demo"
+      desc="This demo kotlin-js project implements a UI and server for a little recipe search engine to demonstrate fritz2, kotlin-js, localization with mozilla fluent, use of koin in a webapp."
+      setPlatforms(JS)
+      setTags("fritz2","fluent-kotlin","koin","kotlin-js","webui","examples")
     }
   }
   subcategory("Idea Plugins") {
@@ -463,6 +501,18 @@ category("Projects") {
       desc = "CoinBit is completely free Bitcoin & cryptocurrency portfolio tracker app. It helps you over 4000+ cryptocurrencies on 150+ platforms including Binance, GDAX, Kraken etc"
       setPlatforms(ANDROID)
       setTags("cryptocurrency", "kotlin", "android", "app")
+    }
+    link {
+      github = "MohsinAli0899/Book Summary App"
+      desc = "BookHub is an Android application that helps users to view books and add them to favorites."
+      setPlatforms(ANDROID)
+      setTags("booksummary", "kotlin", "android", "app")
+    }
+    link {
+      github = "zt64/Hyperion"
+      desc = "An alternative YouTube front-end using modern Android architecture and Material 3"
+      setPlatforms(ANDROID)
+      setTags("android", "kotlin", "compose", "mvvm", "koin", "material3")
     }
   }
 }

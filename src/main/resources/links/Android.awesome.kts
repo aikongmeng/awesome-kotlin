@@ -375,11 +375,26 @@ category("Android") {
       setTags("android", "kotlin", "ui", "toggle", "switch", "heart", "ui-components", "heart-shaped-curve", "toggle-switch", "jetpack-compose", "heart-shape")
       setPlatforms(ANDROID)
     }
+    link {
+      github = "popovanton0/Blueprint"
+      name = "Blueprint"
+      desc = "📐 A library that draws a blueprint on top of your Jetpack Compose composables. It visualizes dimensions, like paddings and sizes."
+      href = "https://github.com/popovanton0/Blueprint"
+      setTags("android", "kotlin", "jetpack-compose", "ui", "layout", "ui-components", "debug", "debugging")
+      setPlatforms(ANDROID)
+    }
+    link {
+      github = "itmaginationdemos/OTPComposable"
+      name = "OTPComposable"
+      desc = "A library dedicated to making OTP (One Time Password) components a breeze to implement"
+      setTags("android", "kotlin", "ui", "jetpack-compose")
+      setPlatforms(ANDROID)
+    }
   }
   subcategory("Frameworks") {
     link {
       github = "nekocode/kotgo"
-      desc = "An android development framwork on kotlin using MVP architecture."
+      desc = "An android development framework on kotlin using MVP architecture."
     }
     link {
       github = "lightningkite/kotlin-core"
@@ -533,7 +548,7 @@ category("Android") {
     }
     link {
       github = "massivedisaster/AFM"
-      desc = "An library to help android developers working easly with activities and fragments with Kotlin"
+      desc = "A library to help android developers work easily with activities and fragments with Kotlin"
       setTags("utils", "library", "material", "ui", "fragment", "activity", "sharedelements")
     }
     link {
@@ -646,6 +661,11 @@ category("Android") {
       desc = "Free and open source effective link management app with no ads."
       setTags("kotlin", "mvvm", "hilt", "navigation", "room", "coroutines")
     }
+    link {
+      github = "AnkitSuda/Rebound"
+      desc = "Feature Rich & Highly Customizable Workout Log App."
+      setTags("kotlin", "mvvm", "hilt", "navigation", "room", "coroutines", "flow", "jetpack-compose", "room", "workout", "multi-module")
+    }
   }
   subcategory("Extensions") {
     link {
@@ -684,7 +704,7 @@ category("Android") {
   }
   subcategory("Tests") {
     link {
-      github = "agoda-com/Kakao"
+      github = "KakaoCup/Kakao"
       desc =  "Nice and simple DSL for Espresso in Kotlin"
       setTags("espresso", "dsl")
       setPlatforms(ANDROID)

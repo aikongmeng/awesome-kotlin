@@ -124,6 +124,11 @@ category("Links") {
       desc = "Learn how to use kotlin's standard library with lambda functions"
       href = "https://medium.com/androiddevelopers/kotlin-standard-functions-cheat-sheet-27f032dd4326"
     }
+    link {
+      name = "Kotlin: An Illustrated Guide"
+      desc = "Illustrated guide to learn Kotlin"
+      href = "https://typealias.com/start/"
+    }
   }
   subcategory("Blogs") {
     link {
@@ -248,6 +253,26 @@ category("Links") {
       name = "Kotlin Course - Tutorial for Beginners by freeCodeCamp.org"
       href = "https://youtu.be/F9UC9DY-vIU"
       desc = "Learn the Kotlin programming language in this introduction to Kotlin. Kotlin is a general purpose, open source, statically typed “pragmatic” programming language. It is used for many things, including Android development."
+    }
+    link {
+      name = "CS194A Android Development"
+      href = "https://www.youtube.com/playlist?list=PL7NYbSE8uaBDcLkbXsQADdvBnVbavonGn"
+      desc = "Learn basic, foundational techniques for developing Android mobile applications and apply those toward building a single or multi page, networked Android application"
+    }
+    link {
+      name = "Server-side with Kotlin Series"
+      href = "https://www.youtube.com/playlist?list=PLlFc5cFwUnmx-dpq9nkdaVJX0GnrM1Mp1"
+      desc = "Learn how to use Kotlin for a variety of purposes such as Functional Programming, Image Detection, Building Microservices, Developing Backend, etc."
+    }
+    link {
+      name = "Programming Fundamentals in Kotlin"
+      href = "https://www.coursera.org/learn/meta-programming-fundamentals-kotlin"
+      desc = "Practice and expand on the fundamentals of programming that are core to any language as well as the unique aspects of Kotlin syntax."
+    }
+    link {
+      name = "Advanced Programming in Kotlin"
+      href = "https://www.coursera.org/learn/advanced-programming-in-kotlin"
+      desc = "Get ready to expand on your Kotlin skills to create common advanced functionality that typical Android apps need."
     }
   }
   subcategory("Books") {

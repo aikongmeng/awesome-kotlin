@@ -1,12 +1,11 @@
-@Suppress("DSL_SCOPE_VIOLATION") // https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
     application
     kotlin("jvm")
-    alias(libs.plugins.kt.serializatin)
+    kotlin("plugin.serialization")
 }
 
 application {
-    mainClass.set("link.kotlin.server.Application")
+    mainClass.set("Application")
     applicationName = "awesome"
 }
 
@@ -15,48 +14,56 @@ repositories {
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = "11"
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+            "-opt-in=kotlinx.serialization.ExperimentalSerializationApi",
+            "-opt-in=io.ktor.server.locations.KtorExperimentalLocationsAPI",
+        )
     }
 }
 
+tasks.test {
+    useJUnitPlatform()
+}
+
 dependencies {
-    implementation(libs.kotlin.stdlib)
-    implementation(libs.kotlinx.serialization.hocon)
-    implementation(libs.kotlin.reflect)
-    implementation(libs.kotlin.coroutines)
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.9.0")
 
-    implementation(libs.flyway)
-    implementation(libs.jooq.core)
-    implementation(libs.postgresql)
-    implementation(libs.hikari)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-hocon:1.7.2")
+    implementation("com.charleskorn.kaml:kaml:0.61.0")
 
-    implementation(libs.bcrypt)
+    implementation("org.flywaydb:flyway-database-postgresql:10.18.0")
+    implementation("org.jooq:jooq:3.19.11")
+    implementation("org.postgresql:postgresql:42.7.4")
+    implementation("com.zaxxer:HikariCP:5.1.0")
 
-    implementation(libs.ktor.serialization)
-    implementation(libs.ktor.client)
-    implementation(libs.ktor.client.content.negation)
-    implementation(libs.ktor.server)
-    implementation(libs.ktor.server.locations)
-    implementation(libs.ktor.server.websockets)
-    implementation(libs.ktor.server.content.negation)
-    implementation(libs.ktor.server.auth.jwt)
-    implementation(libs.ktor.server.metrics.micrometer)
-    implementation(libs.micrometer.prometheus)
-    implementation(libs.ktor.server.call.logging)
-    implementation(libs.ktor.server.default.headers)
-    implementation(libs.ktor.server.caching.headers)
-    implementation(libs.ktor.server.status.pages)
+    implementation("at.favre.lib:bcrypt:0.10.2")
 
-    implementation(libs.jackson.module.kotlin)
-    implementation(libs.jackson.datatype.jsr310)
-    implementation(libs.jackson.dataformat.xml)
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
+    implementation("io.ktor:ktor-client-cio:2.3.12")
+    implementation("io.ktor:ktor-server-content-negotiation:2.3.12")
+    implementation("io.ktor:ktor-server-cio:2.3.12")
+    implementation("io.ktor:ktor-server-locations:2.3.12")
+    implementation("io.ktor:ktor-server-websockets:2.3.12")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.12")
+    implementation("io.ktor:ktor-server-auth-jwt:2.3.12")
+    implementation("io.ktor:ktor-server-metrics-micrometer:2.3.12")
+    implementation("io.micrometer:micrometer-registry-prometheus:1.13.4")
+    implementation("io.ktor:ktor-server-call-logging:2.3.12")
+    implementation("io.ktor:ktor-server-default-headers:2.3.12")
+    implementation("io.ktor:ktor-server-caching-headers:2.3.12")
+    implementation("io.ktor:ktor-server-status-pages:2.3.12")
 
-    implementation(libs.slf4j.api)
-    implementation(libs.logback)
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.17.2")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.17.2")
 
-    testImplementation(libs.kotlin.coroutines.test)
-    testImplementation(libs.kotlin.test)
-    testImplementation(libs.mockk)
-    testImplementation(libs.junit)
+    implementation("ch.qos.logback:logback-classic:1.5.8")
+
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+    testImplementation("io.mockk:mockk:1.13.12")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.11.0")
 }

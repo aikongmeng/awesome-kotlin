@@ -120,8 +120,9 @@ category("Libraries/Frameworks") {
       setTags("web", "rest", "http")
     }
     link {
-      github = "hexagonkt/hexagon"
-      desc = "A Microservices framework that takes care of HTTP, serialization and storage."
+      github = "hexagontk/hexagon"
+      href = "https://hexagontk.com"
+      desc = "A Microservices toolkit that takes care of HTTP, serialization and templates."
       setTags("web", "rest", "http")
     }
     link {
@@ -303,6 +304,12 @@ category("Libraries/Frameworks") {
       desc = "Pure Kotlin mocking library."
       setTags("test", "mock")
       awesome()
+    }
+    link {
+        github = "lupuuss/Mokkery"
+        desc = "The mocking library for Kotlin Multiplatform, easy to use, boilerplate-free and compiler plugin driven."
+        setTags("test", "mock")
+        setPlatforms(JVM, ANDROID, NATIVE, IOS)
     }
     link {
       github = "Ninja-Squad/springmockk"
@@ -923,6 +930,12 @@ category("Libraries/Frameworks") {
       setTags("database", "SQL", "driver", "query", "postgres", "postgresql", "mysql", "async", "async-io", "non-blocking")
       setPlatforms(NATIVE)
     }
+    link {
+      github = "huanshankeji/exposed-vertx-sql-client"
+      desc = "Exposed on top of Vert.x Reactive SQL Client"
+      setTags("Exposed", "Vert.x", "vertx", "database", "query", "SQL", "postgres", "postgresql", "async", "async-io", "non-blocking")
+      setPlatforms(JVM)
+    }
   }
   subcategory("Tools") {
     link {
@@ -957,6 +970,12 @@ category("Libraries/Frameworks") {
       github = "pinterest/ktlint"
       desc = "An anti-bikeshedding Kotlin linter with built-in formatter."
       setTags("style", "linter")
+      awesome()
+    }
+    link {
+      github = "nbadal/ktlint-intellij-plugin"
+      desc = "An anti-bikeshedding Kotlin linter with built-in formatter. Get instant formating with Ktlint in your IDEA."
+      setTags("style", "linter","Intellij IDEA, Android Studio")
       awesome()
     }
     link {
@@ -1050,6 +1069,12 @@ category("Libraries/Frameworks") {
       desc = "A Kotlin compiler plugin that performs 'copy-erasure' on data classes."
       setPlatforms(ANDROID, COMMON, IOS, JS, JVM, NATIVE, WASM)
       setTags("data-class", "compiler-plugin", "value-based-classes", "binary-compatibility")
+    }
+    link {
+      github = "Mr-Mappie/mappie"
+      desc = "Kotlin compiler plugin generating type-safe and performant object mapping code."
+      setPlatforms(ANDROID, COMMON, IOS, JS, JVM, NATIVE, WASM)
+      setTags("compiler-plugin", "object-mapping", "utility", "conversion")
     }
   }
   subcategory("Continuous Integration") {
@@ -1542,6 +1567,11 @@ category("Libraries/Frameworks") {
       setTags("math", "percentage")
     }
     link {
+      github = "eriksencosta/money"
+      desc = "Monetary calculations and allocations made easy"
+      setTags("money", "currency", "cryptocurrency", "foreign-exchange")
+    }
+    link {
       github = "vendelieu/telegram-bot"
       desc = "A lightweight, feature-rich wrapper for the Telegram Bot API"
       setTags("telegram", "bot", "Kotlin")
@@ -1588,6 +1618,13 @@ category("Libraries/Frameworks") {
       desc = "A multiplatform Kotlin library for working with date and time."
       setTags("multiplatform", "date", "time")
       awesome()
+    }
+    link {
+      github = "vendelieu/re.this"
+      desc = "Kotlin Multiplatform Redis Client: coroutine-based, DSL-powered, and easy to use. "
+      href = "https://vendelieu.github.io/re.this/"
+      setTags("multiplatform", "coroutines", "redis", "client")
+      setPlatforms(COMMON, IOS, JVM, NATIVE)
     }
     link {
       github = "oolong-kt/oolong"
@@ -2363,6 +2400,24 @@ category("Libraries/Frameworks") {
       desc = "Multiplatform UI widget that recreates the Android 13 squiggly progress bar"
       setTags("jetpack-compose", "compose", "kotlin", "compose-desktop", "ui")
       setPlatforms(JVM, ANDROID, JS)
+    }
+    link {
+      github = "huanshankeji/compose-multiplatform-html-unified"
+      desc = "Unified Compose Multiplatform wrappers of common and Material Design APIs for rendering-based Compose UI and DOM-based Compose HTML"
+      setTags("Compose Multiplatform", "Compose UI", "Compose HTML", "compose", "compose-desktop", "ui", "Material Design", "Material", "Material 2", "Material 3", "Material Web", "Kobweb")
+      setPlatforms(COMMON, ANDROID, JVM, IOS, WASM, JS)
+    }
+    link {
+      github = "huanshankeji/compose-html-material"
+      desc = "Compose HTML Material 3 wrapper components based on Material Web"
+      setTags("Compose HTML", "Material Design", "Material", "Material 3", "Material Web", "Web Components")
+      setPlatforms(JS)
+    }
+    link {
+      github = "jocoand/compose-showcase"
+      desc = "A Jetpack Compose library for highlighting / showcasing your feature"
+      setTags("jetpack-compose", "compose", "kotlin", "ui")
+      setPlatforms(ANDROID)
     }
   }
 }
